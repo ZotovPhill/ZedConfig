@@ -35,7 +35,7 @@ fi
 mkdir -p "$ZED_CONFIG_DIR"
 
 # Copy Zed configuration files
-yes | cp -rf "$LOCAL_ZED_CONFIG_DIR"/* "$ZED_CONFIG_DIR"
+yes | cp -rf "$LOCAL_ZED_CONFIG_DIR"/configs/* "$ZED_CONFIG_DIR"
 
 # Modify keymap.json based on OS
 KEYMAP_FILE="$ZED_CONFIG_DIR/keymap.json"
