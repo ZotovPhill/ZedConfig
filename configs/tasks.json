@@ -1,0 +1,20 @@
+// Zed Tasks
+//
+// This file is a JSON file that contains a
+// list of tasks that can be run in Zed.
+// For more information on tasks, see the Zed documentation:
+// https://zed.dev/docs/tasks?highlight=tasks#tasks
+//
+// To see all of Zed's default tasks without
+// changing your custom tasks,run the `zed: open tasks`
+// command from the command palette or from the Zed application menu.
+[
+  {
+    "label": "start lazygit",
+    "command": "file=$(echo $ZED_FILE) && substring=$(echo ${file#$ZED_WORKTREE_ROOT/}) && if echo \"${substring}\" | grep -q '/'; then SECOND_DIR=$(echo \"${substring}\" | cut -d'/' -f1); else SECOND_DIR=; fi && SECOND_DIR_PATH=$ZED_WORKTREE_ROOT/$SECOND_DIR && [ -d \"$SECOND_DIR_PATH/.git\" ] && lazygit -p \"$SECOND_DIR_PATH\""
+  },
+  {
+    "label": "start lazydocker",
+    "command": "lazydocker"
+  }
+]

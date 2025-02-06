@@ -1,0 +1,198 @@
+{
+  "Hello World": {
+    "prefix": "snprintsep",
+    "body": ["print(\"*\" * 100)", "$0"],
+    "description": "Print Hello, World!"
+  },
+  "If Else": {
+    "prefix": "snifelse",
+    "body": [
+      "if ${1:condition}:",
+      "    ${2:pass}",
+      "else:",
+      "    ${3:pass}",
+      "$0"
+    ],
+    "description": "If/Else block statement"
+  },
+  "For Loop": {
+    "prefix": "snfor",
+    "body": ["for ${1:item} in ${2:iterable}:", "    ${3:pass}", "$0"],
+    "description": "For loop iteration"
+  },
+  "While Loop": {
+    "prefix": "snwhile",
+    "body": ["while ${1:condition}:", "    ${2:pass}", "$0"],
+    "description": "While loop"
+  },
+  "Function Definition": {
+    "prefix": "sndef",
+    "body": [
+      "def ${1:function_name}(${2:parameters}):",
+      "    \"\"\"${3:docstring}\"\"\"",
+      "    ${4:pass}",
+      "$0"
+    ],
+    "description": "Function definition"
+  },
+  "Class Definition": {
+    "prefix": "snclass",
+    "body": [
+      "class ${1:ClassName}(${2:object}):",
+      "    def __init__(self, ${3:args}):",
+      "        ${4:pass}",
+      "",
+      "    ${5:pass}",
+      "$0"
+    ],
+    "description": "Class definition with initializer"
+  },
+  "Try Except": {
+    "prefix": "sntry",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as ${3:e}:",
+      "    ${4:pass}",
+      "$0"
+    ],
+    "description": "Try/Except block"
+  },
+  "List Comprehension": {
+    "prefix": "snlistcomp",
+    "body": [
+      "[${1:expression} for ${2:item} in ${3:iterable} if ${4:condition}]",
+      "$0"
+    ],
+    "description": "List comprehension"
+  },
+  "Lambda Function": {
+    "prefix": "snlambda",
+    "body": ["${1:func} = lambda ${2:args}: ${3:expression}", "$0"],
+    "description": "Define a lambda function"
+  },
+  "Main Block": {
+    "prefix": "snmain",
+    "body": ["if __name__ == '__main__':", "    ${1:main()}", "$0"],
+    "description": "Main script entry point"
+  },
+  "With Open (Context Manager)": {
+    "prefix": "snwithopen",
+    "body": [
+      "with open('${1:file}', '${2:r/w}') as ${3:f}:",
+      "    ${4:pass}",
+      "$0"
+    ],
+    "description": "Open a file using a context manager"
+  },
+  "Decorator": {
+    "prefix": "sndecorator",
+    "body": [
+      "def ${1:decorator}(func):",
+      "    def wrapper(*args, **kwargs):",
+      "        ${2:# pre-processing}",
+      "        result = func(*args, **kwargs)",
+      "        ${3:# post-processing}",
+      "        return result",
+      "    return wrapper",
+      "$0"
+    ],
+    "description": "Function decorator"
+  },
+  "Unit Test Function": {
+    "prefix": "sntestfunc",
+    "body": [
+      "def test_${1:function_name}():",
+      "    ${2:result} = ${3:function_call}(${4:args})",
+      "    assert ${2:result} == ${5:expected_result}",
+      "$0"
+    ],
+    "description": "A basic unit test function"
+  },
+  "Generator Function": {
+    "prefix": "sngenerator",
+    "body": [
+      "def ${1:generator_name}(${2:iterable}):",
+      "    for ${3:item} in ${2:iterable}:",
+      "        ${4:# optional processing}",
+      "        yield ${3:item}",
+      "$0"
+    ],
+    "description": "Generator function using yield"
+  },
+  "Try Finally": {
+    "prefix": "sntryfinally",
+    "body": ["try:", "    ${1:pass}", "finally:", "    ${2:cleanup}", "$0"],
+    "description": "Try/Finally block"
+  },
+  "Import Statement": {
+    "prefix": "snimport",
+    "body": ["import ${1:module}", "$0"],
+    "description": "Import a module"
+  },
+  "From Import Statement": {
+    "prefix": "snfromimport",
+    "body": ["from ${1:module} import ${2:function/class/variable}", "$0"],
+    "description": "Import specific functions, classes, or variables from a module"
+  },
+  "Assert Statement": {
+    "prefix": "snassert",
+    "body": ["assert ${1:condition}, \"${2:Error message}\"", "$0"],
+    "description": "Assert statement to check conditions"
+  },
+  "Ternarey Operator": {
+    "prefix": "snternary",
+    "body": [
+      "${1:value_if_true} if ${2:condition} else ${3:value_if_false}",
+      "$0"
+    ],
+    "description": "Ternary operator"
+  },
+  "Dictionary Comprehension": {
+    "prefix": "sndictcomp",
+    "body": [
+      "{${1:key_expression}: ${2:value_expression} for ${3:item} in ${4:iterable} if ${5:condition}}",
+      "$0"
+    ],
+    "description": "Dictionary comprehension"
+  },
+  "String Interpolation": {
+    "prefix": "snfstring",
+    "body": ["f\"${1:Hello, {name}}\"", "$0"],
+    "description": "String interpolation using f-strings"
+  },
+  "Enum": {
+    "prefix": "snenum",
+    "body": [
+      "from enum import Enum",
+      "",
+      "class ${1:EnumName}(${2:type}, Enum):",
+      "    ${3:enum_member} = ${4:value}",
+      "$0"
+    ],
+    "description": "Enum class definition"
+  },
+  "Named Tuple": {
+    "prefix": "snnamedtuple",
+    "body": [
+      "from collections import namedtuple",
+      "",
+      "${1:TupleName} = namedtuple('${1:TupleName}', ['${2:field1}', '${3:field2}'])",
+      "$0"
+    ],
+    "description": "Named tuple definition"
+  },
+  "Abstract Class": {
+    "prefix": "snabstract",
+    "body": [
+      "from abc import ABC, abstractmethod",
+      "",
+      "class ${1:AbstractClassName}(ABC):",
+      "    @abstractmethod",
+      "    def ${2:abstract_method}(self):",
+      "        ${3:pass}",
+      "$0"
+    ],
+    "description": "Abstract class definition"
+  }
+}
