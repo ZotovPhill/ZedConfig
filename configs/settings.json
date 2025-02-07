@@ -15,7 +15,7 @@
   },
   "autosave": "on_focus_change",
   "ui_font_size": 15,
-  "buffer_font_size": null,
+  "buffer_font_size": 15,
   // NOTE: Change the font family to your preference
   "buffer_font_family": "GeistMono Nerd Font",
   "ui_font_weight": 20,
@@ -90,12 +90,20 @@
         }
       },
       "language_servers": ["pyright", "ruff"]
+    },
+    "GraphQL": {
+      "format_on_save": "off",
+      "hard_tabs": true,
+      "tab_size": 4
     }
   },
   // Use zed commit editor
   "terminal": {
     "env": {
       "EDITOR": "zed --wait"
+    },
+    "shell": {
+      "program": "zsh"
     },
     "font_size": 13
   },

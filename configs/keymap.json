@@ -24,7 +24,7 @@
     "context": "Editor",
     "bindings": {
       "ctrl-space": "editor::ShowCompletions",
-      "ctrl-a": ["workspace::SendKeystrokes", "# space %%"]
+      "ctrl-shift-a": ["workspace::SendKeystrokes", "# space %%"]
     }
   }
 ]
