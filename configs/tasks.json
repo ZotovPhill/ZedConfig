@@ -11,7 +11,7 @@
 [
   {
     "label": "start lazygit",
-    "command": "file=$(echo $ZED_FILE) && substring=$(echo ${file#$ZED_WORKTREE_ROOT/}) && if echo \"${substring}\" | grep -q '/'; then SECOND_DIR=$(echo \"${substring}\" | cut -d'/' -f1); else SECOND_DIR=; fi && SECOND_DIR_PATH=$ZED_WORKTREE_ROOT/$SECOND_DIR && [ -d \"$SECOND_DIR_PATH/.git\" ] && lazygit -p \"$SECOND_DIR_PATH\""
+    "command": "if [ -d \"$ZED_WORKTREE_ROOT/.git\" ]; then lazygit -p \"$ZED_WORKTREE_ROOT\"; else file=$(echo $ZED_FILE) && substring=$(echo ${file#$ZED_WORKTREE_ROOT/}) && if echo \"${substring}\" | grep -q '/'; then SECOND_DIR=$(echo \"${substring}\" | cut -d'/' -f1); else SECOND_DIR=; fi && SECOND_DIR_PATH=$ZED_WORKTREE_ROOT/$SECOND_DIR && echo $SECOND_DIR && [ -d \"$SECOND_DIR_PATH/.git\" ] && lazygit -p \"$SECOND_DIR_PATH\"; fi"
   },
   {
     "label": "start lazydocker",
