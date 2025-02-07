@@ -24,7 +24,9 @@
     "context": "Editor",
     "bindings": {
       "ctrl-space": "editor::ShowCompletions",
-      "ctrl-shift-a": ["workspace::SendKeystrokes", "# space %%"]
+      "alt-shift-d": "editor::GoToDefinition",
+      "alt-shift-s": "pane::GoBack",
+      "ctrl-a": ["workspace::SendKeystrokes", "# space %%"]
     }
   }
 ]
